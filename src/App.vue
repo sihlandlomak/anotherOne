@@ -1,24 +1,27 @@
 <template>
-  <div>
+  <div class="mainDiv">
+    
     <navbar-comp />
-  </div>
   <main class="main">
     <router-view/>
   </main>
+  <footer-comp />
+  </div>
 </template>
 
 <script>
+import FooterComp from './components/FooterComp.vue';
 import NavbarComp from './components/NavbarComp.vue';
 
 export default {
-  components: { NavbarComp },
+  components: { NavbarComp, FooterComp },
 
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Merriweather", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -41,7 +44,14 @@ nav router-link {
 nav a.router-link-exact-active {
   color: white;
 }
+
+.mainDiv{
+  display: grid;
+  grid-template-rows: auto minmax(100dvh, 100%);
+  background-size: 100vh;
+}
 main{
   margin-top: 50px;
 }
+
 </style>
